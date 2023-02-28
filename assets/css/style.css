@@ -1,0 +1,368 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+hr {
+    opacity: 1;
+    border: solid;
+    color: #373b66;
+    margin: 50px 250px;
+    height: 5px;
+
+}
+
+.navbar {
+    background-color: #373b66;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.collapse {
+    display: flex;
+    justify-content: center;
+
+}
+
+.nav-link {
+    margin: 20px;
+    font-size: x-large;
+}
+
+.navbar-brand img {
+    width: 5em;
+    height: 5em;
+    border-radius: 50px;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item :hover {
+    color: #d71a09;
+}
+
+.nav-link,
+.navbar-toggler {
+    color: rgb(255, 255, 255);
+}
+
+.title {
+    color: rgb(0, 0, 0);
+    margin: 40px;
+    text-align: center;
+}
+
+.bi {
+    color: rgb(255, 255, 255);
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.jour .bi {
+    color: rgb(92, 53, 53);
+}
+
+#btn {
+    display: flex;
+    justify-content: right;
+    margin: 50px 100px;
+
+}
+
+.btn {
+    font-weight: bolder;
+    font-size: x-large;
+    border: 2px solid black;
+    padding: 15px 50px;
+    background-color: #F6C669;
+}
+
+#btn a:hover {
+    color: black;
+    border: 2px solid black;
+
+}
+
+#carouselfringale {
+    width: 50%;
+    margin: auto;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    /* object-fit: cover; */
+    
+}
+
+
+#carte {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#map {
+    border: 1px solid rgb(0, 0, 0);
+    width: 60%;
+    height: auto;
+}
+
+#emplacement {
+    border: 4px solid black;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.jour {
+    text-align: center;
+    padding: 10px;
+}
+
+.jourSemaine,
+.impaire {
+    /* font-size: larger; */
+    font-weight: bold;
+    font-size: 22px;
+}
+
+
+
+.presentationCuisinier h1 {
+    margin: 40px;
+    text-align: center;
+}
+
+.photoDescritption img {
+    width: 250px;
+    height: 250px;
+}
+
+.textDescription {
+    margin: 20px 10px;
+    text-align: justify;
+}
+
+.description {
+    margin: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.menu1 {
+    text-align: center;
+}
+
+
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modal-body img {
+    width: 180px;
+    height: 180px;
+    margin: 20px;
+}
+
+.modal-body ul li {
+    list-style-type: none;
+}
+
+.modal-footer .btncontact {
+    border: 2px solid black;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: x-large;
+    border: 2px solid black;
+    padding: 5px 8px;
+    background-color: #F6C669;
+}
+
+.btnModal .btnmodal {
+    border: 2px solid black;
+    border-radius: 10px;
+    font-weight: bolder;
+    border: 2px solid black;
+    padding: 1px 10px;
+    background-color: #F6C669;
+}
+
+
+
+.gallery{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vmin;
+    padding: 0 14px;
+}
+
+.gallery::after{
+    content: "";
+    display: block;
+    flex-grow: 10;
+}
+
+.gallery li{
+    list-style-type: none;
+    height: 350px;
+    /* flex-grow: 1; permet de dire de prendre l'espace qu'il reste */
+    flex-grow: 1;
+    border: 2px solid black;
+}
+
+.gallery img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+form{
+    margin: 20px;
+    border: 2px solid black;
+}
+
+fieldset{
+    border: 2px solid rgb(223, 36, 36);
+    margin: 20px;
+}
+
+h2,h1{
+    text-align: center;
+    margin: 30px;
+}
+
+.row{
+    padding: 10px;
+}
+
+.submitform{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.alert{
+    width: 40%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.alert-danger{
+    background-color: rgba(255, 0, 0, 0.454);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: #373b66;
+    height: 80px;
+    margin-top: 20px;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+}
+
+
+/* media queries */
+
+@media (max-width: 1040px) {
+
+    hr {
+        opacity: 1;
+        border: solid;
+        color: #373b66;
+        margin: 50px 50px;
+        height: 5px;
+
+    }
+
+    #map {
+        min-height: 50vh;
+    }
+
+    #emplacement {
+        margin-top: 50px;
+    }
+
+    .btn {
+        padding: 6px 12px;
+    }
+
+    #btn {
+        margin: 20px;
+
+    }
+
+    .description {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+
+
+
+}
+
+
+@media (min-width: 1040px){
+
+    .panier{
+
+        order: 3;
+        margin-right: 80px;
+    }
+
+
+
+
+
+
+
+}
