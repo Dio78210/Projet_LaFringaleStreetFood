@@ -1,7 +1,8 @@
 <?php
     session_start();
 
-    define("TITLE","Page Admin");
+    define("TITLE","Accueil Admin");
+    define("CSS","navCssAdmin");
 
     require_once(__DIR__."/../controllers/adminController.php");
 
@@ -9,9 +10,9 @@
 
     $adminController->verifyLogin();
 
-
-    include(__DIR__."/../assets/include/headerNav.php");
+    include(__DIR__."/../assets/include/head.php");
+    include(__DIR__."/../assets/include/navAdmin.php");
 
     include(__DIR__."/../views/indexAdmin.php");
 
-    include(__DIR__."/../assets/include/footer.php");
+    include(__DIR__."/../assets/include/footerAdmin.php");

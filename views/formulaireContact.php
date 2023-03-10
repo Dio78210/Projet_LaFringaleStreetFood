@@ -58,10 +58,10 @@
 
             <div class="row g-3">
                 <div class="col-md-6">
-                    <label for="date_evenement" class="form-label">Date de l'évenement</label>
+                    <label for="date_evenement" class="form-label">Date de l'évènement</label>
                     <input type="date" name="date_evenement" id="date_evenement" class="form-control" value="<?= (isset($_POST["date_evenement"])) ? $_POST["date_evenement"] : ""; ?>">
 
-                    <label for="horaire_evenement" class="form-label">Horraire de début de l'évenement</label>
+                    <label for="horaire_evenement" class="form-label">Horaire de début de l'évènement</label>
                     <input type="time" name="horaire_evenement" id="horaire_evenement" class="form-control" value="<?= (isset($_POST["horaire_evenement"])) ? $_POST["horaire_evenement"] : ""; ?>">
 
                     <label for="nombre_de_convive" class="form-label">Nombre de convives</label> 

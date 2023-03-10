@@ -9,16 +9,14 @@
 
     $adminController = new AdminController;
 
-
+    
     // $adminController->signUp();
 
     $messages = $adminController->signIn();
 
-
-    include(__DIR__."/../assets/include/headerNav.php");
+    include(__DIR__."/../assets/include/head.php");
 
     include(__DIR__."/../views/connexionAdmin.php");
 
-    include(__DIR__."/../assets/include/footer.php");
 
 ?>

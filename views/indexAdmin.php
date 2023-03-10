@@ -1,1 +1,6 @@
-<h1>Bienvenue sur ma page Admin</h1>
+<div class="main_content">
+        <div class="header">Bienvenu sur ma page Admin</div>
+        <div class="info">
+            <div>Lorem ipsum</div>
+        </div>
+    </div>

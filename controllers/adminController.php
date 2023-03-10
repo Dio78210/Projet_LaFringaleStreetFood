@@ -12,7 +12,7 @@ class AdminController{
 
         if(isset($_POST["submit"])){
 
-            if(!isset($_POST["email"])){
+            if(!isset($_POST["email"]) || !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
                 $messages [] = [
                     "success" => false,
                     "text" => "Indiquer un email d'utilisateur"
@@ -26,14 +26,20 @@ class AdminController{
                 ];
             }
 
-            if(count($messages) ==0 ){
+            if(count($messages) == 0 ){
                 
                 $admin = Admin::readOne($_POST["email"]);
 
-                if(!password_verify($_POST["password"], $admin->mot_de_passe)){
+                if($admin == false){
                     $messages [] = [
                         "success" => false,
-                        "text" => "mot de passe incorrecte"
+                        "text" => "Email incorrect"
+                    ];
+                }
+                elseif(!password_verify($_POST["password"], $admin->mot_de_passe)){
+                    $messages [] = [
+                        "success" => false,
+                        "text" => "mot de passe incorrect"
                     ];
                 }
                 else{
@@ -48,7 +54,6 @@ class AdminController{
                     //on peux faire une redirection
                     header("location: /Admin/index.php");
                 }
-                
             }
         }
         return $messages;
@@ -57,22 +62,21 @@ class AdminController{
 
     public function signUp(): void{
 
-                //preparation des données
-                $nom = "Mezieres";
-                $prenom = "Damien";
-                $email = htmlspecialchars("damienmezieres@gmail.com") ;
-                $password = password_hash("Damien1990", PASSWORD_DEFAULT);
+        //preparation des données
+        $nom = "Mezieres";
+        $prenom = "Damien";
+        $email = htmlspecialchars("damienmezieres@gmail.com") ;
+        $password = password_hash("Damien1990", PASSWORD_DEFAULT);
 
-                //envoi des information au modele
-                Admin::create($nom, $prenom, $email, $password);
-
+        //envoi des information au modele
+        Admin::create($nom, $prenom, $email, $password);
     }
 
     //methode qui verifie si l'employer est connecté
-    public function verifyLogin(): void {
-        if(!isset($_SESSION["username"])){
+    public function verifyLogin(): void{
+        if(!isset($_SESSION["email"])){
             $_SESSION["message"] = "Merci de vous connecter pour accéder à ce contenu";
-            header("Location: /admin/connexion.php");
+            header("Location: /Admin/connexion.php");
         }
     }
 

@@ -4,10 +4,11 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    /* margin: 0; */
+    /* padding: 0; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     height: 100vh;
+    overflow: hidden;
 }
 
 .connexion{
@@ -17,6 +18,9 @@ body {
 }
 
 .center {
+    position: absolute;
+    margin-top: 10%;
+    /* margin-left: 15%; */
     background: #fff;
     border-radius: 15px;
     width: 400px;
@@ -32,8 +36,8 @@ body {
 }
 
 .center form {
-    padding: 0 40px;
-    box-sizing: border-box;
+    padding: 25px 40px;
+    /* box-sizing: border-box; */
 }
 
 form .txt_field {
@@ -48,7 +52,7 @@ form .txt_field {
     height: 40px;
     font-size: 16px;
     border: none;
-    background: none;
+    /* background: none; */
     outline: none;
 }
 
@@ -58,7 +62,7 @@ form .txt_field {
     left: 5px;
     color: #adadad;
     transform: translateY(-50%);
-    font-size: 16px;
+    font-size: 20px;
     pointer-events: none;
     transition: .5s;
 }
@@ -85,15 +89,15 @@ form .txt_field {
     width: 100%;
 }
 
-.pass {
+/* .pass {
     margin: -5px 0 20px 5px;
     color: #666666;
     cursor: pointer;
-}
+} */
 
-.pass:hover {
+/* .pass:hover {
     text-decoration: underline;
-}
+} */
 
 input[type="submit"] {
     width: 100%;
@@ -103,9 +107,9 @@ input[type="submit"] {
     background: #2691d9;
     color: #e9f4fb;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 25px;
     cursor: pointer;
-    outline: none;
+    /* outline: none; */
 }
 
 input[type="submit"]:hover {
@@ -113,18 +117,18 @@ input[type="submit"]:hover {
     transition: .5s;
 }
 
-.singup_link {
+/* .singup_link {
     margin: 30px 0;
     text-align: center;
     font-size: 16px;
     color: #666666;
-}
+} */
 
-.singup_link a {
+/* .singup_link a {
     color: #2691d9;
     text-decoration: none;
-}
+} */
 
-.singup_link a:hover {
+/* .singup_link a:hover {
     text-decoration: underline;
-}
+} */
