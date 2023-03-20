@@ -1,5 +1,6 @@
 <?php
 
+require_once(__DIR__ . "/../assets/include/connectionBDD.php");
 
 class Commande{
 

@@ -50,7 +50,7 @@ class AdminController{
 
 
                     $_SESSION["email"] = $_POST["email"];
-
+                    $_SESSION["prenom"] = $admin->prenom;
                     //on peux faire une redirection
                     header("location: /Admin/index.php");
                 }
@@ -79,6 +79,9 @@ class AdminController{
             header("Location: /Admin/connexion.php");
         }
     }
+
+
+    
 
 
 

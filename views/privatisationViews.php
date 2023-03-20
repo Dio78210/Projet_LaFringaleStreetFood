@@ -8,7 +8,7 @@
 
     <div class="galerie">
 
-        <h2>Voici quelques photos de certaine privatisation</h2>
+        <h2>Voici quelques photos de certaines privatisations</h2>
 
         <ul class="gallery">
             <li><img src="event/BarbecueEvent.jpg" alt=""></li>

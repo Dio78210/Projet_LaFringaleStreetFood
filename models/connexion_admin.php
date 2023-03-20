@@ -66,7 +66,7 @@ class Admin{
         $statement->execute();
         $statement->setFetchMode(PDO::FETCH_CLASS, "Admin");
         $admin = $statement->fetch();
-
+        
         return $admin;
 
     }
