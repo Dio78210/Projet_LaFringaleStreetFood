@@ -73,7 +73,7 @@ class Menu{
     }
 
 
-    public static function Update(string $nom_menu, string $type_menu, string $description_menu, ?string $image_menu, float $prix_seul, float $prix_frite, float $prix_boisson){
+    public static function Update(int $id_menu,string $nom_menu, string $type_menu, string $description_menu, ?string $image_menu, float $prix_seul, float $prix_frite, float $prix_boisson){
         global $pdo;
 
         $sql = "UPDATE menu
@@ -96,9 +96,8 @@ class Menu{
         $statement->bindParam(":prix_frite", $prix_frite);
         $statement->bindParam(":prix_boisson", $prix_boisson);
         $statement->bindParam(":id_menu", $id_menu,PDO::PARAM_INT);
-        
-        $statement->execute();
 
+        $statement->execute();
     }
 
 

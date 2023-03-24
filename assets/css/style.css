@@ -2,7 +2,16 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Merienda', cursive;
+}
+
+h1,h2,h3,h4,h5,h6, .jourSemaine{
+    font-family: Alfa Slab One;
+    font-size: 31.25px;
+}
+
+p,label,a, .horaire, .bi{
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 20px;
 }
 
 body{
@@ -39,6 +48,7 @@ hr {
     width: 5em;
     height: 5em;
     border-radius: 50px;
+    margin-left: 30px;
 }
 
 .nav-item {
@@ -94,7 +104,7 @@ hr {
 
 }
 
-#carouselfringale {
+/* #carouselfringale {
     width: 50%;
     margin: auto;
 }
@@ -102,9 +112,9 @@ hr {
 .carousel-item img {
     width: 100%;
     height: auto;
-    /* object-fit: cover; */
+    object-fit: cover;
     
-}
+} */
 
 
 #carte {
@@ -147,17 +157,17 @@ hr {
 }
 
 .photoDescritption img {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: auto;
 }
 
 .textDescription {
-    margin: 20px 10px;
+    margin: 20px 30px;
     text-align: justify;
 }
 
 .description {
-    margin: 0 50px;
+    margin: 0 50px 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,7 +216,9 @@ hr {
     background-color: #F6C669;
 }
 
-
+.galerie{
+    margin-bottom: 30px;
+}
 
 .gallery{
     max-width: 1200px;
@@ -285,9 +297,9 @@ h2,h1{
 
 
 footer {
-    
     background-color: #373b66;
     padding: 40px 0px;
+    margin-top: 30px;
 }
 
 /* footer ul li {
@@ -295,19 +307,16 @@ footer {
 } */
 
 .img{
-
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 .img img{
     border-radius: 100px;
 }
 
-.bi{
-    padding: 10px;
-}
+
 
 .adress .infos,
 .contact .infos

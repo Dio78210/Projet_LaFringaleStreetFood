@@ -10,9 +10,9 @@
             <?php
             foreach ($menus as $menu) {
                 if ($menu->type_menu == "hot-dog") { ?>
-                    <div class="col-lg-4 d-flex ">
-                        <div class="card" style="width: 18rem;">
-                            <img src="/../assets/image/imgMenu/imgMenu<?= $menu->image_menu ?>" alt="image du menu">
+                    <div class="col-lg-4 col-md-6 d-flex ">
+                        <div class="card" style="width: 20rem;">
+                            <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" width="100%" height="180px" alt="image du menu">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $menu->nom_menu ?></h5>
                                 <p class="card-text"><?= $menu->description_menu ?></p>
@@ -38,8 +38,8 @@
             foreach ($menus as $menu) {
                 if ($menu->type_menu == "burger") { ?>
                     <div class="col-lg-4 d-flex ">
-                        <div class="card" style="width: 18rem;">
-                            <img src="/../assets/image/imgMenu/imgMenu<?= $menu->image_menu ?>" alt="image du menu">
+                        <div class="card" style="width: 20rem;">
+                            <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $menu->nom_menu ?></h5>
                                 <p class="card-text"><?= $menu->description_menu ?></p>
@@ -66,8 +66,8 @@
             foreach ($menus as $menu) {
                 if ($menu->type_menu == "enfant") { ?>
                     <div class="col-lg-4 d-flex ">
-                        <div class="card" style="width: 18rem;">
-                            <img src="/../assets/image/imgMenu/imgMenu<?= $menu->image_menu ?>" alt="image du menu">
+                        <div class="card" style="width: 20rem;">
+                            <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $menu->nom_menu ?></h5>
                                 <p class="card-text"><?= $menu->description_menu ?></p>
@@ -94,7 +94,7 @@
                 if ($menu->type_menu == "autre") { ?>
                     <div class="col-lg-4 d-flex ">
                         <div class="card" style="width: 18rem;">
-                            <img src="/../assets/image/imgMenu/imgMenu<?= $menu->image_menu ?>" alt="image du menu">
+                            <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $menu->nom_menu ?></h5>
                                 <p class="card-text"><?= $menu->description_menu ?></p>

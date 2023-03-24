@@ -21,7 +21,7 @@
         <div class="row hotdog g-3 m-3">
             <div class="col-lg-4 d-flex ">
                 <div class="card" style="width: 18rem;">
-                    <img src="/../assets/image/imgMenu/imgMenu<?= $menu->image_menu ?>" alt="image du menu">
+                    <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
                     <div class="card-body">
                         <h5 class="card-title"><?= $menu->nom_menu ?></h5>
                         <p class="card-text"><?= $menu->description_menu ?></p>

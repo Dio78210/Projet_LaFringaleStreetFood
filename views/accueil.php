@@ -2,65 +2,20 @@
         <a href="contact.php" class="btn">Contact</a>
     </div>
 
+    <section class="presentationCuisinier">
 
-    <section class="carousel">
+        <h1>Votre chef cuistot </h1>
 
-        <h1 class="title">Galerie photo</h1>
+        <article class="description">
 
-        <div id="carouselfringale" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="1280x960/camion.jpg" class="d-block w-100 " alt="photo du camion">
-                </div>
-                <div class="carousel-item">
-                    <img src="1280x960/camion2.jpg" class="d-block w-100 " alt="photo du camion">
-                </div>
-                <div class="carousel-item">
-                    <img src="1280x960/camion3.jpg" class="d-block w-100 " alt="photo du camion">
-                </div>
-                <div class="carousel-item">
-                    <img src="1280x960/hot dog.jpg" class="d-block w-100 " alt="photo hotdog">
-                </div>
-                <div class="carousel-item">
-                    <img src="1280x960/hotdog2.jpg" class="d-block w-100 " alt="photo hotdog">
-                </div>
-                <div class="carousel-item">
-                    <img src="1280x960/hotdog3.jpg" class="d-block w-100 " alt="photo hotdog">
-                </div>
-                <div class="carousel-item">
-                    <img src="1280x960/burger.jpg" class="d-block w-100 " alt="photo burger">
-                </div>
-                <div class="carousel-item">
-                    <img src="1280x960/burger2.jpg" class="d-block w-100 " alt="photo burger">
-                </div>
-                <div class="carousel-item">
-                    <img src="1280x960/burger3.jpg" class="d-block w-100 " alt="photo burger">
-                </div>
-                <div class="carousel-item">
-                    <img src="event/BarbecueEvent.jpg" class="d-block w-100 " alt="photo burger">
-                </div>
-                <div class="carousel-item">
-                    <img src="event/BarbecueEvent2.jpg" class="d-block w-100 " alt="photo burger">
-                </div>
-                <div class="carousel-item">
-                    <img src="event/dessertEvent.jpg" class="d-block w-100 " alt="photo burger">
-                </div>
-                <div class="carousel-item">
-                    <img src="event/EventMotard2.jpg" class="d-block w-100 " alt="photo burger">
-                </div>
-                <div class="carousel-item">
-                    <img src="event/PrivatisationFoire.jpg" class="d-block w-100 " alt="photo burger">
-                </div>
+            <div class="photoDescritption">
+                <img src="/PhotoEtLogo/LeCuistojpg.jpg" alt="Photo du cuisinier">
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselfringale" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselfringale" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+
+            <div class="textDescription">
+                <p> Je suis un passionné de cuisine qui a passé de nombreuses années à perfectionner mes compétences culinaires. Je travaille actuellement dans un food truck spécialisé dans les hot-dogs et les burgers maison. J'aime particulièrement travailler avec des ingrédients frais et de qualité pour créer des recettes savoureuses et originales pour mes clients. Je prends énormément de plaisir à partager ma passion pour la nourriture et à voir les gens apprécier mes créations.</p>
+            </div>
+        </article>
 
     </section>
 
@@ -103,7 +58,7 @@
                     <br><br>
                     <div class="jourSemaine" id="Jeudi">Jeudi</div>
                     <div class="impaire">Semaine impaire</div>
-                    <div class="horraire">19:00-20:30</div>
+                    <div class="horaire">19:00-20:30</div>
                     <a href="https://goo.gl/maps/4vXvGXxGwTRqGvCGA"><i class="bi bi-geo-alt-fill"></i>Mairie, 27 Droisy</a>
                 </div>
 
@@ -128,19 +83,4 @@
     </section>
 
 
-    <section class="presentationCuisinier">
-
-        <h1>Votre chef cuistot </h1>
-
-        <article class="description">
-
-            <div class="photoDescritption">
-                <img src="1280x960/photodescription.jpg" alt="Photo du cuisinier">
-            </div>
-
-            <div class="textDescription">
-                Je suis un passionné de cuisine qui a passé de nombreuses années à perfectionner mes compétences culinaires. Je travaille actuellement dans un food truck spécialisé dans les hot-dogs et les burgers maison. J'aime particulièrement travailler avec des ingrédients frais et de qualité pour créer des recettes savoureuses et originales pour mes clients. Je prends énormément de plaisir à partager ma passion pour la nourriture et à voir les gens apprécier mes créations.
-            </div>
-        </article>
-
-    </section>
+    

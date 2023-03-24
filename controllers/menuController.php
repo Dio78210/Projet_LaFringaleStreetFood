@@ -57,7 +57,7 @@ class MenuController{
                 if (count($messages) == 0) {
                     //enregistrement de l'image et ajouter dans le fichier de sauvegarde
                     $image_menu = time() . $_FILES["image_menu"]["name"];
-                    move_uploaded_file($_FILES["image_menu"]["tmp_name"], __DIR__ . "/../assets/image/imgMenu/imgMenu" . $image_menu);
+                    move_uploaded_file($_FILES["image_menu"]["tmp_name"], __DIR__ . "/../assets/image/imgMenu/" . $image_menu);
                 }
             } else {
                 $image_menu = null;
@@ -148,7 +148,7 @@ class MenuController{
             $description_menu = htmlspecialchars($description_menu, ENT_QUOTES);
 
             //verification de l'image
-            if (isset($_FILES["image_menu"])) {
+            if (isset($_FILES["image_menu"]) && (!isset($_POST["type_menu"]) || $_POST["type_menu"] != "autre")) {
 
                 if ($_FILES["image_menu"]["error"] != 0) {
                     $messages[] = [
@@ -179,7 +179,7 @@ class MenuController{
                 if (count($messages) == 0) {
                     //enregistrement de l'image et ajouter dans le fichier de sauvegarde
                     $image_menu = time() . $_FILES["image_menu"]["name"];
-                    move_uploaded_file($_FILES["image_menu"]["tmp_name"], __DIR__ . "/../assets/image/imgMenu/imgMenu" . $image_menu);
+                    move_uploaded_file($_FILES["image_menu"]["tmp_name"], __DIR__ . "/../assets/image/imgMenu/" . $image_menu);
                 }
             } else {
                 $image_menu = null;
@@ -206,7 +206,7 @@ class MenuController{
                 ];
             }
 
-            if (!isset($_POST["type_menu"]) || !in_array($_POST["type_menu"], ["hot-dog", "burger", "autre"])) {
+            if (!isset($_POST["type_menu"]) || !in_array($_POST["type_menu"], ["hot-dog", "burger", "enfant", "autre"])) {
                 $messages[] = [
                     "success" => false,
                     "text" => "Veuillez choisir un menu"
@@ -218,8 +218,9 @@ class MenuController{
                     "success" => true,
                     "text" => "Le menu a bien été mis a jour."
                 ];
-
-                Menu::Update($_POST["nom_menu"], $_POST["type_menu"], $description_menu, $image_menu, $_POST["prix_seul"], $_POST["prix_frite"], $_POST["prix_boisson"]);
+                
+                $id_menu = $_GET["id"];
+                Menu::Update($id_menu,$_POST["nom_menu"], $_POST["type_menu"], $description_menu, $image_menu, $_POST["prix_seul"], $_POST["prix_frite"], $_POST["prix_boisson"]);
             }
         }
         return $messages;
@@ -235,7 +236,7 @@ class MenuController{
                 die;
         }
 
-        $g_id = $_GET["id"];
-        Menu::delete($g_id);
+        $id = $_GET["id"];
+        Menu::delete($id);
     }
 }

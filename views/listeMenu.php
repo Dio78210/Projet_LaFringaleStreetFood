@@ -23,7 +23,7 @@
                     <div class="col-sm-6 col-lg-4 d-flex justify-content-center">
 
                         <div class="card" style="width: 18rem;">
-                            <img src="/../assets/image/imgMenu/imgMenu<?= $menu->image_menu ?>" alt="image du menu">
+                            <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $menu->nom_menu ?></h5>
                                 <p class="card-text"><?= $menu->description_menu ?></p>
@@ -50,7 +50,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img src="/../assets/image/imgMenu/imgMenu<?= $menu->image_menu ?>" alt="image du menu">
+                                    <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
                                     <p><?= $menu->description_menu ?></p>
 
                                 </div>
@@ -78,7 +78,7 @@
                     <div class="col-sm-6 col-lg-4 d-flex justify-content-center">
 
                         <div class="card" style="width: 18rem;">
-                            <img src="/../assets/image/imgMenu/imgMenu<?= $menu->image_menu ?>" alt="image du menu">
+                            <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $menu->nom_menu ?></h5>
                                 <p class="card-text"><?= $menu->description_menu ?></p>
@@ -105,7 +105,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img src="/../assets/image/imgMenu/imgMenu<?= $menu->image_menu ?>" alt="image du menu">
+                                    <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
                                     <p><?= $menu->description_menu ?></p>
 
                                 </div>
@@ -133,7 +133,7 @@
                     <div class="col-sm-6 col-lg-4 d-flex justify-content-center">
 
                         <div class="card" style="width: 18rem;">
-                            <img src="/../assets/image/imgMenu/imgMenu<?= $menu->image_menu ?>" alt="image du menu">
+                            <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $menu->nom_menu ?></h5>
                                 <p class="card-text"><?= $menu->description_menu ?></p>
@@ -159,7 +159,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img src="/../assets/image/imgMenu/imgMenu<?= $menu->image_menu ?>" alt="image du menu">
+                                    <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
                                     <p><?= $menu->description_menu ?></p>
 
                                 </div>

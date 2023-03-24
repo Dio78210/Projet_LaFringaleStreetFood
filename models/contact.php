@@ -65,5 +65,5 @@ class Contact{
         $contacts = $statement->fetchAll();
 
         return $contacts;
-}
+    }
 }

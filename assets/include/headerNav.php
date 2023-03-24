@@ -33,16 +33,16 @@
                 <div class="collapse navbar-collapse " id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php">Accueil</a>
+                            <a class="nav-link" href="/index.php">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="menu.php">Menu</a>
+                            <a class="nav-link" href="/menu.php">Menu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="privatisation.php">Privatisation</a>
+                            <a class="nav-link" href="/privatisation.php">Privatisation</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.php">Contact</a>
+                            <a class="nav-link" href="/contact.php">Contact</a>
                         </li>
 
                     </ul>

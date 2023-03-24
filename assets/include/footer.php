@@ -1,7 +1,7 @@
 <footer id="footer">
 
         <div class="img">
-            <img src="PhotoEtLogo/logo 2.png" width="100" height="100" alt="logo DM">
+            <img src="PhotoEtLogo/logo 2.png" width="130" height="130" alt="logo DM">
         </div>
 
         <div class="container">
