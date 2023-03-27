@@ -98,7 +98,28 @@ body{
     margin-bottom: 20px ;
 }
 
+.presentationCuisinier h1 {
+    margin: 40px;
+    text-align: center;
+}
 
+.photoDescritption img {
+    width: 100%;
+    height: auto;
+}
+
+.textDescription {
+    margin: 20px 30px;
+    text-align: justify;
+}
+
+.description {
+    margin: 0 50px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 
 
 

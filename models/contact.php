@@ -5,25 +5,25 @@ require_once(__DIR__ . "/../assets/include/connectionBDD.php");
 class Contact{
 
     public int $id_contact;
-    public string $nom;
-    public string $prenom;
+    public ?string $nom;
+    public ?string $prenom;
     public ?string $nom_entreprise;
-    public string $email;
-    public string $telephone;
-    public string $adresse;
+    public ?string $email;
+    public ?string $telephone;
+    public ?string $adresse;
     public ?string $complement_adresse;
-    public string $ville;
-    public string $code_postal;
-    public string $date_evenement;
-    public string $horaire_evenement;
-    public int $nombre_de_convive;
+    public ?string $ville;
+    public ?string $code_postal;
+    public ?string $date_evenement;
+    public ?string $horaire_evenement;
+    public ?int $nombre_de_convive;
     public ?string $prestation_hotdog;
     public ?string $prestation_burger;
     public ?string $prestation_autre;
     public ?string $information;
 
 
-    public static function create(string $nom, string $prenom, ?string $nom_entreprise, string $email, int $nombre_de_convive, string $telephone, string $adresse, ?string $complement_adresse, string $ville, string $code_postal, string $date_evenement, string $horaire_evenement, ?string $prestation_hotdog, ?string $prestation_burger, ?string $prestation_autre, ?string $information){
+    public static function create(?string $nom, ?string $prenom, ?string $nom_entreprise, ?string $email, ?int $nombre_de_convive, ?string $telephone, ?string $adresse, ?string $complement_adresse, ?string $ville, ?string $code_postal, ?string $date_evenement, ?string $horaire_evenement, ?string $prestation_hotdog, ?string $prestation_burger, ?string $prestation_autre, ?string $information){
         global $pdo;
 
         $sql= "INSERT INTO contact (nom, prenom, nom_entreprise, email, nombre_de_convive, telephone, adresse,  complement_adresse, ville, code_postal, date_evenement, horaire_evenement, prestation_hotdog, prestation_burger, prestation_autre, information)

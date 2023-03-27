@@ -4,16 +4,16 @@
 
     <section class="presentationCuisinier">
 
-        <h1>Votre chef cuistot </h1>
+        <h1><?= $aPropos->titre ?> </h1>
 
         <article class="description">
 
             <div class="photoDescritption">
-                <img src="/PhotoEtLogo/LeCuistojpg.jpg" alt="Photo du cuisinier">
+                <img src="/../assets/image/imgApropos/<?= $aPropos->photo ?>" alt="Photo du cuisinier">
             </div>
 
             <div class="textDescription">
-                <p> Je suis un passionné de cuisine qui a passé de nombreuses années à perfectionner mes compétences culinaires. Je travaille actuellement dans un food truck spécialisé dans les hot-dogs et les burgers maison. J'aime particulièrement travailler avec des ingrédients frais et de qualité pour créer des recettes savoureuses et originales pour mes clients. Je prends énormément de plaisir à partager ma passion pour la nourriture et à voir les gens apprécier mes créations.</p>
+                <p> <?= $aPropos->contenu ?> </p>
             </div>
         </article>
 
@@ -29,6 +29,52 @@
         <div id="carte">
 
             <div id="map"></div>
+            <script>
+                
+                let x = 48.763699;
+                let y = 1.2370123;
+                let zoom = 11;
+
+                //affichage de la carte
+                var map = L.map('map').setView([x, y], zoom);
+
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+
+
+                <?php
+                foreach($localisations as $localisation){ ?>
+                var marker = L.marker([<?= $localisation->x ?>, <?= $localisation->y ?>]).addTo(map);
+                marker.bindPopup("<strong><?= $localisation->lieu ?></strong><br><strong><?= $localisation->jour_semaine ?>i</strong><br><?= $localisation->heure_debut ?>-<?= $localisation->heure_fin ?>");
+
+                <?php 
+                }
+                ?>
+
+                //affichage des points de localisation avec un popup
+                var marker = L.marker([48.8200048, 1.2676415]).addTo(map);
+                marker.bindPopup("<strong>Illiers l'Evêque</strong><br><strong>Lundi</strong><br>18:30-20:30");
+
+                var marker = L.marker([48.7627778, 1.2261111]).addTo(map);
+                marker.bindPopup("<strong>Nonancourt</strong><br><strong>Mardi</strong><br>18:30-20:30");
+
+                var marker = L.marker([48.6584342, 1.2714959]).addTo(map);
+                marker.bindPopup("<strong>Saulnières</strong><br><strong>Mercredi</strong><br>18:30-20:30");
+
+                var marker = L.marker([48.8335035, 1.1988893]).addTo(map);
+                marker.bindPopup("<strong>Marcilly La Campagne</strong><br><strong>Jeudi (semaine paire)</strong><br>18:30-20:30");
+
+                var marker = L.marker([48.8079167, 1.1413333]).addTo(map);
+                marker.bindPopup("<strong>Droisy</strong><br><strong>Jeudi (semaine impaire)</strong><br>18:30-20:30");
+
+                var marker = L.marker([48.756592, 1.0572117]).addTo(map);
+                marker.bindPopup("<strong>Tillières sur Avre</strong><br><strong>Vendredi</strong><br>18:30-20:30");
+
+
+            </script>
+
 
             <aside id="emplacement">
 

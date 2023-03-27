@@ -1,5 +1,5 @@
 <div id="btn">
-        <a href="contact.php" class="btn">Contact</a>
+        <a href="contact.php?demande=contact" class="btn">Contact</a>
     </div>
 
 
@@ -18,4 +18,7 @@
             } ?>
         </ul>
 
+    </div>
+    <div id="btn">
+        <a href="contact.php?demande=privatisation" class="btn">Privatisation</a>
     </div>

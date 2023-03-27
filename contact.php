@@ -3,6 +3,7 @@
 
     define("TITLE","Contact");
     define("CSS","style");
+    define("SCRIPT","form");
 
     require_once(__DIR__ . "/controllers/formContactController.php");
 

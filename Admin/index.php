@@ -7,6 +7,13 @@
     require_once(__DIR__."/../controllers/adminController.php");
     $adminController = new AdminController;
     $adminController->verifyLogin();
+
+    require_once(__DIR__."/../controllers/aProposController.php");
+    $aProposController = new aProposController;
+    $aPropos = $aProposController->readOnePropos();
+    $messages = $aProposController->updatePropos();
+
+
     
     include(__DIR__."/../assets/include/head.php");
     include(__DIR__."/../assets/include/navAdmin.php");

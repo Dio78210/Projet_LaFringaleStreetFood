@@ -9,13 +9,15 @@ class Localisation{
     public string $heure_debut;
     public string $heure_fin;
     public string $lieu;
+    public float $x;
+    public float $y;
 
 
-    public static function Create(string $jour_semaine, string $heure_debut, string $heure_fin, string $lieu){
+    public static function Create(string $jour_semaine, string $heure_debut, string $heure_fin, string $lieu, float $x, float $y){
         global $pdo;
 
-        $sql= "INSERT INTO localisation (jour_semaine, heure_debut, heure_fin, lieu)
-                VALUES (:jour_semaine, :heure_debut, :heure_fin, :lieu)";
+        $sql= "INSERT INTO localisation (jour_semaine, heure_debut, heure_fin, lieu, x, y)
+                VALUES (:jour_semaine, :heure_debut, :heure_fin, :lieu,:x, :y)";
         
         $statement = $pdo->prepare($sql);
 
@@ -23,6 +25,9 @@ class Localisation{
         $statement->bindParam(":heure_debut", $heure_debut,PDO::PARAM_STR);
         $statement->bindParam(":heure_fin", $heure_fin,PDO::PARAM_STR);
         $statement->bindParam(":lieu", $lieu, PDO::PARAM_STR);
+        $statement->bindParam(":x", $x);
+        $statement->bindParam(":y", $y);
+
     
         $statement->execute();
 
@@ -65,14 +70,16 @@ class Localisation{
     }
 
 
-    public static function Update(string $jour_semaine, string $heure_debut, string $heure_fin, string $lieu){
+    public static function Update(int $id_localisation, string $jour_semaine, string $heure_debut, string $heure_fin, string $lieu, float $x, float $y){
         global $pdo;
 
         $sql = "UPDATE localisation
                 SET jour_semaine = :jour_semaine,
                     heure_debut = :heure_debut,
                     heure_fin = :heure_fin,
-                    lieu = :lieu
+                    lieu = :lieu,
+                    x = :x,
+                    y = :y
                 WHERE id_localisation = :id_localisation";
     
         $statement = $pdo->prepare($sql);
@@ -81,6 +88,8 @@ class Localisation{
         $statement->bindParam(":heure_debut", $heure_debut,PDO::PARAM_STR);
         $statement->bindParam(":heure_fin", $heure_fin,PDO::PARAM_STR);
         $statement->bindParam(":lieu", $lieu, PDO::PARAM_STR);
+        $statement->bindParam(":x", $x);
+        $statement->bindParam(":y", $y);
         $statement->bindParam(":id_localisation", $id_localisation,PDO::PARAM_INT);
         
         $statement->execute();

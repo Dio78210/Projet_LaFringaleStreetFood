@@ -1,20 +1,25 @@
-<form action="#" method="POST">
+<h1 class="mt-5">Choisissez Votre Demande</h1>
+<div class="choix">
+    <button id="btn-court" class="btn m-5">Prendre Contact</button>
+    <button id="btn-long" class="btn m-5">Demande de Privatisation</button>
+</div>
 
-    <h2>Formulaire de contact</h2>
-
-    <fieldset>
-
-    <?php
-        if (count($messages) > 0){
-        foreach($messages as $message) { 
-            if($message["success"]) { ?>
-                <p class="alert alert-success"><?= $message["text"] ?></p>
-            <?php } 
-            else { ?>
-                <p class="alert alert-danger"><?= $message["text"] ?></p>
-            <?php }
+<?php
+        if (count($messages) > 0) {
+            foreach ($messages as $message) {
+                if ($message["success"]) { ?>
+                    <p class="alert alert-success"><?= $message["text"] ?></p>
+                <?php } else { ?>
+                    <p class="alert alert-danger"><?= $message["text"] ?></p>
+        <?php }
             }
         } ?>
+
+<form action="#" method="POST" id="form-long">
+
+    <h2>Formulaire de Privatisation</h2>
+
+    <fieldset>
 
         <div class="row g-3">
             <div class="col-md-6">
@@ -64,7 +69,7 @@
                     <label for="horaire_evenement" class="form-label">Horaire de début de l'évènement</label>
                     <input type="time" name="horaire_evenement" id="horaire_evenement" class="form-control" value="<?= (isset($_POST["horaire_evenement"])) ? $_POST["horaire_evenement"] : ""; ?>">
 
-                    <label for="nombre_de_convive" class="form-label">Nombre de convives</label> 
+                    <label for="nombre_de_convive" class="form-label">Nombre de convives</label>
                     <input type="number" name="nombre_de_convive" id="nombre_de_convive" class="form-control" value="<?= (isset($_POST["nombre_de_convive"])) ? $_POST["nombre_de_convive"] : ""; ?>">
 
                     <legend>Prestation demandée</legend>
@@ -98,6 +103,42 @@
             </div>
         </div>
 
+        <input type="hidden" name="form" value="long">
+        <div class="submitform">
+            <button type="submit" name="submit" class="btn">Envoyer</button>
+        </div>
+
+    </fieldset>
+</form>
+
+<form action="#" method="POST" id="form-court">
+    <h2>Formulaire de Contact</h2>
+    <fieldset>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" name="nom" id="nom" class="form-control" aria-label="First name" value="<?= (isset($_POST["nom"])) ? $_POST["nom"] : ""; ?>">
+            </div>
+            <div class="col-md-6">
+                <label for="prenom" class="form-label">Prénom</label>
+                <input type="text" name="prenom" id="prenom" class="form-control" aria-label="Last name" value="<?= (isset($_POST["prenom"])) ? $_POST["prenom"] : ""; ?>">
+            </div>
+
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control" value="<?= (isset($_POST["email"])) ? $_POST["email"] : ""; ?>">
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="information" class="form-label">Ajouter des informations complémentaires</label>
+                    <textarea class="form-control" name="information" id="information"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <input type="hidden" name="form" value="court">
         <div class="submitform">
             <button type="submit" name="submit" class="btn">Envoyer</button>
         </div>

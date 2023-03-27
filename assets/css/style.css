@@ -254,6 +254,12 @@ form{
     margin: 20px;
 }
 
+form#form-court, form#form-long{
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
 fieldset{
     margin: 20px;
 }
@@ -261,6 +267,11 @@ fieldset{
 h2,h1{
     text-align: center;
     margin: 30px;
+}
+
+.choix{
+    display: flex;
+    justify-content: center;
 }
 
 .infos{
