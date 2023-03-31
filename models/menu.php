@@ -14,6 +14,19 @@ class Menu{
     public float $prix_boisson;
 
 
+    
+    /**
+     * Creation d'un nouveau menu dans la base de donnée
+     *
+     * @param  string $nom_menu
+     * @param  string $type_menu
+     * @param  string $description_menu
+     * @param  ?string $image_menu
+     * @param  float $prix_seul
+     * @param  float $prix_frite
+     * @param  float $prix_boisson
+     * @return void
+     */
     public static function Create(string $nom_menu, string $type_menu, string $description_menu, ?string $image_menu, float $prix_seul, float $prix_frite, float $prix_boisson){
         global $pdo;
 

@@ -23,7 +23,7 @@
                     <div class="col-sm-6 col-lg-4 d-flex justify-content-center">
 
                         <div class="card" style="width: 18rem;">
-                            <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
+                            <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" class="card-img-top" alt="image du menu">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $menu->nom_menu ?></h5>
                                 <p class="card-text"><?= $menu->description_menu ?></p>
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                <?php } 
+            <?php }
             } ?>
         </div>
     </div>
@@ -193,9 +193,9 @@
                                     </button>
                                 </div>
                             </li>
-                            
+
                         </ul>
-                        
+
                     </div>
 
                     <div class="modal fade" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModalLabel8" aria-hidden="true">

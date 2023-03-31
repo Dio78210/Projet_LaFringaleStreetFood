@@ -19,6 +19,12 @@
 
 
 
+    require_once(__DIR__."/controllers/localisationController.php");
+    $localisationController = new LocalisationController;
+    $localisations = $localisationController->readAllLocalisation();
+
+
+
 
 
 
@@ -31,5 +37,3 @@
     include(__DIR__."/assets/include/footer.php");
 
 
-
-?>

@@ -104,18 +104,6 @@ hr {
 
 }
 
-/* #carouselfringale {
-    width: 50%;
-    margin: auto;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    
-} */
-
 
 #carte {
 
@@ -304,7 +292,15 @@ h2,h1{
     background-color: rgba(255, 0, 0, 0.454);
 }
 
+/* .card{
+    width: 17.95rem;
+    height: 200px;
+}
 
+.card img{
+    width: 100%;
+    height: 100%;
+} */
 
 
 footer {
@@ -424,9 +420,18 @@ i{
     }
 
 
-
-
-
-
-
 }
+
+/* @media (min-width: 500px) {
+
+    .card {
+        width: 17.95rem;
+        height: 200px;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+    }
+
+} */

@@ -4,7 +4,7 @@
     <button id="btn-long" class="btn m-5">Demande de Privatisation</button>
 </div>
 
-<?php
+    <?php
         if (count($messages) > 0) {
             foreach ($messages as $message) {
                 if ($message["success"]) { ?>
@@ -132,7 +132,7 @@
 
             <div class="row g-3">
                 <div class="col-md-6">
-                    <label for="information" class="form-label">Ajouter des informations complémentaires</label>
+                    <label for="information" class="form-label">Laissez votre message</label>
                     <textarea class="form-control" name="information" id="information"></textarea>
                 </div>
             </div>

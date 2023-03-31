@@ -29,7 +29,6 @@ class Admin{
     }
 
 
-
     public static function Update(string $nom, string $prenom, string $email, string $mot_de_passe){
         global $pdo;
 
@@ -40,14 +39,14 @@ class Admin{
                     mot_de_passe = :mot_de_passe
                 WHERE id_connexion_admin = :id_connexion_admin";
     
-    $statement = $pdo->prepare($sql);
-    
-    $statement->bindParam(":nom", $nom,PDO::PARAM_STR);
-    $statement->bindParam(":prenom", $prenom,PDO::PARAM_STR);
-    $statement->bindParam(":email", $email,PDO::PARAM_STR);
-    $statement->bindParam(":mot_de_passe", $mot_de_passe);
-    
-    $statement->execute();
+        $statement = $pdo->prepare($sql);
+        
+        $statement->bindParam(":nom", $nom,PDO::PARAM_STR);
+        $statement->bindParam(":prenom", $prenom,PDO::PARAM_STR);
+        $statement->bindParam(":email", $email,PDO::PARAM_STR);
+        $statement->bindParam(":mot_de_passe", $mot_de_passe);
+        
+        $statement->execute();
 
     }
 
