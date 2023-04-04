@@ -66,7 +66,7 @@ class AdminController{
         $nom = "Mezieres";
         $prenom = "Damien";
         $email = htmlspecialchars("damienmezieres@gmail.com") ;
-        $password = password_hash("Damien1990", PASSWORD_DEFAULT);
+        $password = password_hash(ADMIN_PASSWORD, PASSWORD_DEFAULT);
 
         //envoi des information au modele
         Admin::create($nom, $prenom, $email, $password);

@@ -13,6 +13,17 @@ class Localisation{
     public float $y;
 
 
+    /**
+     * Fonction create qui va enregistrer les données en BDD
+     *
+     * @param  mixed $jour_semaine
+     * @param  mixed $heure_debut
+     * @param  mixed $heure_fin
+     * @param  mixed $lieu
+     * @param  mixed $x
+     * @param  mixed $y
+     * @return void
+     */
     public static function Create(string $jour_semaine, string $heure_debut, string $heure_fin, string $lieu, float $x, float $y){
         global $pdo;
 
@@ -33,7 +44,13 @@ class Localisation{
 
     }
 
-
+    
+    /**
+     * Fonction readOne qui permet de lire et d'afficher une seul localisation 
+     *
+     * @param  mixed $id_localisation
+     * @return Localisation
+     */
     public static function readOne(int $id_localisation): Localisation|false{
         global $pdo;
 
@@ -55,7 +72,12 @@ class Localisation{
         }
     }
 
-
+    
+    /**
+     * Fonction readAll qui permet de lire et d'afficher toutes les localisations
+     *
+     * @return array
+     */
     public static function readAll():array{
         global $pdo;
 
@@ -69,7 +91,19 @@ class Localisation{
         return $localisations;
     }
 
-
+    
+    /**
+     * Fonction Update qui permet de metre a jour les information en rapport aux localisations
+     *
+     * @param  mixed $id_localisation
+     * @param  mixed $jour_semaine
+     * @param  mixed $heure_debut
+     * @param  mixed $heure_fin
+     * @param  mixed $lieu
+     * @param  mixed $x
+     * @param  mixed $y
+     * @return void
+     */
     public static function Update(int $id_localisation, string $jour_semaine, string $heure_debut, string $heure_fin, string $lieu, float $x, float $y){
         global $pdo;
 
@@ -96,7 +130,13 @@ class Localisation{
 
     }
 
-
+    
+    /**
+     * Fonction Delete qui permet de supprimer une localisation
+     *
+     * @param  mixed $id_localisation
+     * @return void
+     */
     public static function Delete(int $id_localisation): void{
         global $pdo;
 

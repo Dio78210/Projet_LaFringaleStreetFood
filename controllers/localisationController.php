@@ -5,7 +5,12 @@ require_once(__DIR__."/../models/localisation.php");
 
 
 class LocalisationController{
-
+    
+    /**
+     * La méthode readOneLocalisation sert a afficher la localisation qui correspond a son ID dans la base de données.
+     *
+     * @return Localisation
+     */
     public function readOneLocalisation(): Localisation{
         if (!isset($_GET["id"])) {
             echo "veuillez indiquer l'id d'une localisation à afficher";
@@ -34,7 +39,12 @@ class LocalisationController{
         return $localisations;
     }
 
-
+    
+    /**
+     * La Méthode updateLocalisation sert a mettre a jour les informations du formulaire que verifie le controleur et à les ajouter dans la base de données avec la méthode Update du modèle .
+     *
+     * @return array
+     */
     public function updateLocalisation(): array{
         $messages = [];
 
@@ -71,7 +81,6 @@ class LocalisationController{
                     "text" => "Le lieu doit avoir au moin 1 caractère"
                 ];
             }
-
 
             if (!isset($_POST["latitude"]) || !preg_match("#^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$#", $_POST["latitude"])) {
                 $messages[] = [

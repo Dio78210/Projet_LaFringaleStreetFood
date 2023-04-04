@@ -27,9 +27,9 @@
                             <div class="card-body">
                                 <h5 class="card-title"><?= $menu->nom_menu ?></h5>
                                 <p class="card-text"><?= $menu->description_menu ?></p>
-                                <p class="card-text">Menu avec Boisson: <?= $menu->prix_boisson ?>€</p>
-                                <p class="card-text">Menu avec Frite: <?= $menu->prix_frite ?>€</p>
-                                <p class="card-text">Menu Seul: <?= $menu->prix_seul ?>€</p>
+                                <p class="card-text">Menu avec Boisson : <?= $menu->prix_boisson ?>€</p>
+                                <p class="card-text">Menu avec Frite : <?= $menu->prix_frite ?>€</p>
+                                <p class="card-text">Menu Seul : <?= $menu->prix_seul ?>€</p>
 
 
                                 <div class="btnModal">
@@ -52,6 +52,40 @@
                                 <div class="modal-body">
                                     <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
                                     <p><?= $menu->description_menu ?></p>
+
+
+                                    <div class="choix_menu_modal">
+                                        <div class="choix_menu">
+                                            <p class="card-text">Menu avec Boisson : <?= $menu->prix_boisson ?>€</p>
+                                            <div class="counter">
+                                                <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                                                <input type="text" value="1">
+                                                <span class="up" onClick='increaseCount(event, this)'>+</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="choix_menu">
+                                            <p class="card-text">Menu avec Frite : <?= $menu->prix_frite ?>€</p>
+                                            <div class="counter">
+                                                <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                                                <input type="text" value="1">
+                                                <span class="up" onClick='increaseCount(event, this)'>+</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="choix_menu">
+                                            <p class="card-text">Menu Seul: <?= $menu->prix_seul ?>€</p>
+                                            <div class="counter">
+                                                <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                                                <input type="text" value="1">
+                                                <span class="up" onClick='increaseCount(event, this)'>+</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
 
                                 </div>
                                 <div class="modal-footer">

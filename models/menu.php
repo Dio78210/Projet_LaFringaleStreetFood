@@ -16,7 +16,7 @@ class Menu{
 
     
     /**
-     * Creation d'un nouveau menu dans la base de donnée
+     * Fonction qui permet de créer un nouveau menu dans la base de donnée
      *
      * @param  string $nom_menu
      * @param  string $type_menu
