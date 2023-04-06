@@ -7,12 +7,6 @@
 
     <h1>Menu</h1>
 
-    <!-- <div class="prix">
-        <p>Menu avec boisson 11€ </p>
-        <p>Avec Frites 10€</p>
-        <p>Seul 8€</p>
-    </div> -->
-
 
     <h2>Les Hots-Dogs</h2>
     <div class="container">

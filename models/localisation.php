@@ -12,7 +12,6 @@ class Localisation{
     public float $x;
     public float $y;
 
-
     /**
      * Fonction create qui va enregistrer les données en BDD
      *
@@ -72,7 +71,7 @@ class Localisation{
         }
     }
 
-    
+
     /**
      * Fonction readAll qui permet de lire et d'afficher toutes les localisations
      *
@@ -81,13 +80,26 @@ class Localisation{
     public static function readAll():array{
         global $pdo;
 
-        $sql="SELECT * FROM localisation";
+        $semaine = date("W");
+
+        if($semaine%2 == 0){
+            $sql="SELECT * FROM localisation EXCEPT SELECT * FROM localisation WHERE id_localisation = 5";
 
         $statement = $pdo->prepare($sql);
         $statement->execute();
         $statement->setFetchMode(PDO::FETCH_CLASS, "Localisation");
         $localisations = $statement->fetchAll();
-    
+        $impaire = "semaine impaire";
+        }else{
+            $sql="SELECT * FROM localisation EXCEPT SELECT * FROM localisation WHERE id_localisation = 4";
+
+        $statement = $pdo->prepare($sql);
+        $statement->execute();
+        $statement->setFetchMode(PDO::FETCH_CLASS, "Localisation");
+        $localisations = $statement->fetchAll();
+        $impaire = "semaine paire";
+        }
+
         return $localisations;
     }
 

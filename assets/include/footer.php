@@ -37,9 +37,6 @@
                             <a href="https://www.facebook.com/La.Fringale.street.food/?locale=fr_FR"><i class="bi bi-facebook"></i>Facebook</a>
                         </li>
                         <li>
-                            <a href="#"><i class="bi bi-instagram"></i>Instagram</a>
-                        </li>
-                        <li>
                             <a href="https://api.whatsapp.com/send?phone=33660861841&app=facebook&entry_point=page_cta&fbclid=IwAR1VvHyLA018H_DixNNnN_fTB8n-EONzeBcYIHT-bTO47t11y5VU-seMB_E"><i class="bi bi-whatsapp"></i>Whatsapp</a>
                         </li>
                     </ul>
@@ -47,8 +44,8 @@
             </div>
         </div>
 
-        <div class="copiryght">
-            <a href="#"><i class="bi bi-c-circle"></i>copiryght 2022</a>
+        <div class="copyright">
+            <a href="#"><i class="bi bi-c-circle"></i>copyright 2022</a>
         </div>
     </footer>
 

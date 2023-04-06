@@ -36,6 +36,7 @@ class LocalisationController{
 
     public function readAllLocalisation(): array{
         $localisations = Localisation::readAll();
+
         return $localisations;
     }
 

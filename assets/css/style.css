@@ -114,7 +114,8 @@ hr {
 }
 
 #map {
-    border: 1px solid rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
     width: 60%;
     height: auto;
 }
@@ -147,10 +148,11 @@ hr {
 .photoDescritption img {
     width: 100%;
     height: auto;
+    border-radius: 20px;
 }
 
 .textDescription {
-    margin: 20px 30px;
+    margin: 20px 40px;
     text-align: justify;
 }
 
@@ -162,6 +164,13 @@ hr {
 
 }
 
+.card{
+    border: 1.5px solid black;
+}
+
+.list-group {
+    border: 1.5px solid black;
+}
 
 .menu1 {
     text-align: center;
@@ -418,7 +427,7 @@ i{
 }
 
 
-.copiryght{
+.copyright{
     width: 100%;
     display: flex;
     justify-content: center;
