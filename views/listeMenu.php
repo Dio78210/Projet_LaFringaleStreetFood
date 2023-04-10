@@ -51,39 +51,22 @@
                                     <div class="choix_menu_modal">
                                         <div class="choix_menu">
                                             <p class="card-text">Menu avec Boisson : <?= $menu->prix_boisson ?>€</p>
-                                            <div class="counter">
-                                                <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                                                <input type="text" value="1">
-                                                <span class="up" onClick='increaseCount(event, this)'>+</span>
-                                            </div>
+                                            <a href="#" id="btnAjoutPanier<?= $menu->id_menu ?>">ajouter</a>
                                         </div>
 
                                         <div class="choix_menu">
                                             <p class="card-text">Menu avec Frite : <?= $menu->prix_frite ?>€</p>
-                                            <div class="counter">
-                                                <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                                                <input type="text" value="1">
-                                                <span class="up" onClick='increaseCount(event, this)'>+</span>
-                                            </div>
+                                            <a href="#" id="btnAjoutPanier2<?= $menu->id_menu ?>">ajouter</a>
                                         </div>
 
                                         <div class="choix_menu">
                                             <p class="card-text">Menu Seul: <?= $menu->prix_seul ?>€</p>
-                                            <div class="counter">
-                                                <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                                                <input type="text" value="1">
-                                                <span class="up" onClick='increaseCount(event, this)'>+</span>
-                                            </div>
+                                            <a href="#" id="btnAjoutPanier3<?= $menu->id_menu ?>">ajouter</a>
                                         </div>
                                     </div>
 
-
-
-
-
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="panierModal">ajouter au panier</a>
                                     <button type="button" class="btncontact btn-secondary" data-bs-dismiss="modal">Fermer</button>
 
                                 </div>
@@ -136,9 +119,26 @@
                                     <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
                                     <p><?= $menu->description_menu ?></p>
 
+                                    <div class="choix_menu_modal">
+                                        <div class="choix_menu">
+                                            <p class="card-text">Menu avec Boisson : <?= $menu->prix_boisson ?>€</p>
+                                            <a href="#" id="btnAjoutPanier<?= $menu->id_menu ?>">ajouter</a>
+                                        </div>
+
+                                        <div class="choix_menu">
+                                            <p class="card-text">Menu avec Frite : <?= $menu->prix_frite ?>€</p>
+                                            <a href="#" id="btnAjoutPanier2<?= $menu->id_menu ?>">ajouter</a>
+                                        </div>
+
+                                        <div class="choix_menu">
+                                            <p class="card-text">Menu Seul: <?= $menu->prix_seul ?>€</p>
+                                            <a href="#" id="btnAjoutPanier3<?= $menu->id_menu ?>">ajouter</a>
+                                        </div>
+                                    </div>
+
+
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="panierModal">ajouter au panier</a>
                                     <button type="button" class="btncontact btn-secondary" data-bs-dismiss="modal">Fermer</button>
 
                                 </div>
@@ -190,9 +190,25 @@
                                     <img src="/../assets/image/imgMenu/<?= $menu->image_menu ?>" alt="image du menu">
                                     <p><?= $menu->description_menu ?></p>
 
+                                    <div class="choix_menu_modal">
+                                        <div class="choix_menu">
+                                            <p class="card-text">Menu avec Boisson : <?= $menu->prix_boisson ?>€</p>
+                                            <a href="#" id="btnAjoutPanier<?= $menu->id_menu ?>">ajouter</a>
+                                        </div>
+
+                                        <div class="choix_menu">
+                                            <p class="card-text">Menu avec Frite : <?= $menu->prix_frite ?>€</p>
+                                            <a href="#" id="btnAjoutPanier2<?= $menu->id_menu ?>">ajouter</a>
+                                        </div>
+
+                                        <div class="choix_menu">
+                                            <p class="card-text">Menu Seul: <?= $menu->prix_seul ?>€</p>
+                                            <a href="#" id="btnAjoutPanier3<?= $menu->id_menu ?>">ajouter</a>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="panierModal">ajouter au panier</a>
                                     <button type="button" class="btncontact btn-secondary" data-bs-dismiss="modal">Fermer</button>
 
                                 </div>
@@ -239,6 +255,7 @@
                                     </ul>
                                 </div>
                                 <div class="modal-footer">
+                                    <a href="#" id="btnAjoutPanier3<?= $menu->id_menu ?>">ajouter au panier</a>
                                     <button type="button" class="btncontact btn-secondary" data-bs-dismiss="modal">Fermer</button>
                                 </div>
                             </div>
@@ -250,3 +267,107 @@
     </div>
 
 </section>
+
+<script>
+
+    const videPanier = document.getElementById("videPanier");
+    const ul = document.querySelector("#panier");
+    var prixTotal = 0;
+
+    //listeMenus recup la liste des menus de la BDD
+    var listeMenus = <?= json_encode($menus);  ?>;
+
+    //je recup le Panier dans le localStorage s'il existe deja soit je recup un panier vide
+    if (typeof (localStorage.panier) != "undefined") {
+
+        // console.log(localStorage.panier);
+        // empty();
+
+        var panier = JSON.parse(localStorage.panier);
+        for (let i = 0; i < panier.length; i++) {
+            ajoutPanier(panier[i]);
+        }
+    }
+    else {
+        var panier = [];
+    }
+
+        for (let i = 0; i < listeMenus.length; i++) {
+
+            const btnAjoutPanier = document.getElementById("btnAjoutPanier" + listeMenus[i].id_menu);
+            const btnAjoutPanier2 = document.getElementById("btnAjoutPanier2" + listeMenus[i].id_menu);
+            const btnAjoutPanier3 = document.getElementById("btnAjoutPanier3" + listeMenus[i].id_menu);
+
+            if(btnAjoutPanier){
+                btnAjoutPanier.addEventListener("click", function (){
+                panier.push(listeMenus[i]);
+                localStorage.panier = JSON.stringify(panier);
+                ajoutPanier(listeMenus[i], listeMenus[i].prix_boisson);
+                })
+            }
+            
+            if(btnAjoutPanier2){
+                btnAjoutPanier2.addEventListener("click", function (){
+                panier.push(listeMenus[i]);
+                localStorage.panier = JSON.stringify(panier);
+                ajoutPanier(listeMenus[i], listeMenus[i].prix_frite);
+                })
+            }
+
+            if(btnAjoutPanier3){
+                btnAjoutPanier3.addEventListener("click", function (){
+                panier.push(listeMenus[i], listeMenus[i].prix_seul);
+                localStorage.panier = JSON.stringify(panier);
+                ajoutPanier(listeMenus[i], listeMenus[i].prix_seul);
+                })
+            }
+
+            // console.log(listeMenus);
+
+        }
+
+
+        function ajoutPanier(menuAcheter, prix){
+
+            
+
+            let li = document.createElement("li");
+            ul.appendChild(li);
+
+            let titrePanier = document.createElement("p");
+            titrePanier.innerText = menuAcheter.nom_menu;
+            ul.appendChild(titrePanier);
+
+            let img = document.createElement("img");
+            img.style.width = "90px";
+            img.style.height = "90px";
+            console.log(menuAcheter);
+            img.src = "/../assets/image/imgMenu/" + menuAcheter.image_menu;
+            li.appendChild(img);
+
+            let prixPanier = document.createElement("p");
+            prixPanier.textContent = prix + " €";
+            li.appendChild(prixPanier);
+
+            
+            console.log(prix);
+
+
+            // console.log(menuAcheter);
+
+            prixTotal += prix;
+            total.innerText = "TOTAL : " + prixTotal + " €";
+        }
+
+        function empty() {
+            document.getElementById("panier").innerText = "";
+            panier = [];
+            total.innerText = "" ;
+            localStorage.panier = JSON.stringify(panier);
+        }
+
+        videPanier.addEventListener("click", () => {
+        empty();
+        });
+
+</script>

@@ -13,4 +13,27 @@ class Commande{
     //tableau d'objet de la classe menu 
     public ?array $menus;
 
+
+    //finir la function
+    
+    public static function Create(string $jour_semaine, string $heure_debut, string $heure_fin, string $lieu, string ){
+        global $pdo;
+
+        $sql= "INSERT INTO localisation (jour_semaine, heure_debut, heure_fin, lieu, x, y)
+                VALUES (:jour_semaine, :heure_debut, :heure_fin, :lieu,:x, :y)";
+        
+        $statement = $pdo->prepare($sql);
+
+        $statement->bindParam(":jour_semaine", $jour_semaine,PDO::PARAM_STR);
+        $statement->bindParam(":heure_debut", $heure_debut,PDO::PARAM_STR);
+        $statement->bindParam(":heure_fin", $heure_fin,PDO::PARAM_STR);
+        $statement->bindParam(":lieu", $lieu, PDO::PARAM_STR);
+        $statement->bindParam(":x", $x);
+        $statement->bindParam(":y", $y);
+
+    
+        $statement->execute();
+
+    }
+    
 }
