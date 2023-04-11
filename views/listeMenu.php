@@ -25,7 +25,6 @@
                                 <p class="card-text">Menu avec Frite : <?= $menu->prix_frite ?>€</p>
                                 <p class="card-text">Menu Seul : <?= $menu->prix_seul ?>€</p>
 
-
                                 <div class="btnModal">
 
                                     <button type="button" class="btnmodal btn-primary" data-bs-toggle="modal" data-bs-target="#Modal<?= $menu->id_menu ?>">
@@ -284,12 +283,15 @@
         // empty();
 
         var panier = JSON.parse(localStorage.panier);
+        var prix = JSON.parse(localStorage.prix);
+
         for (let i = 0; i < panier.length; i++) {
-            ajoutPanier(panier[i]);
+            ajoutPanier(panier[i], prix[i]);
         }
     }
     else {
         var panier = [];
+        var prix = [];
     }
 
         for (let i = 0; i < listeMenus.length; i++) {
@@ -301,7 +303,9 @@
             if(btnAjoutPanier){
                 btnAjoutPanier.addEventListener("click", function (){
                 panier.push(listeMenus[i]);
+                prix.push(listeMenus[i].prix_boisson);
                 localStorage.panier = JSON.stringify(panier);
+                localStorage.prix = JSON.stringify(prix);
                 ajoutPanier(listeMenus[i], listeMenus[i].prix_boisson);
                 })
             }
@@ -309,15 +313,19 @@
             if(btnAjoutPanier2){
                 btnAjoutPanier2.addEventListener("click", function (){
                 panier.push(listeMenus[i]);
+                prix.push(listeMenus[i].prix_frite);
                 localStorage.panier = JSON.stringify(panier);
+                localStorage.prix = JSON.stringify(prix);
                 ajoutPanier(listeMenus[i], listeMenus[i].prix_frite);
                 })
             }
 
             if(btnAjoutPanier3){
                 btnAjoutPanier3.addEventListener("click", function (){
-                panier.push(listeMenus[i], listeMenus[i].prix_seul);
+                panier.push(listeMenus[i]);
+                prix.push(listeMenus[i].prix_seul);
                 localStorage.panier = JSON.stringify(panier);
+                localStorage.prix = JSON.stringify(prix);
                 ajoutPanier(listeMenus[i], listeMenus[i].prix_seul);
                 })
             }
@@ -333,23 +341,31 @@
 
             let li = document.createElement("li");
             ul.appendChild(li);
+            
 
             let titrePanier = document.createElement("p");
             titrePanier.innerText = menuAcheter.nom_menu;
             ul.appendChild(titrePanier);
 
-            let img = document.createElement("img");
-            img.style.width = "90px";
-            img.style.height = "90px";
-            console.log(menuAcheter);
-            img.src = "/../assets/image/imgMenu/" + menuAcheter.image_menu;
-            li.appendChild(img);
+
+            if(menuAcheter.image_menu){
+                let img = document.createElement("img");
+                img.style.width = "40px";
+                img.style.height = "40px";
+                // console.log(menuAcheter);
+                img.src = "/../assets/image/imgMenu/" + menuAcheter.image_menu;
+                li.appendChild(img);
+            }
+
+            
 
             let prixPanier = document.createElement("p");
             prixPanier.textContent = prix + " €";
             li.appendChild(prixPanier);
-
             
+
+        
+
             console.log(prix);
 
 
@@ -362,8 +378,10 @@
         function empty() {
             document.getElementById("panier").innerText = "";
             panier = [];
+            prix = [];
             total.innerText = "" ;
             localStorage.panier = JSON.stringify(panier);
+            localStorage.prix = JSON.stringify(prix);
         }
 
         videPanier.addEventListener("click", () => {

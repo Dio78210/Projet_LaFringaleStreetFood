@@ -178,11 +178,11 @@ hr {
 
 
 
-.modal-body {
+/* .modal-body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
+} */
 
 .modal-body img {
     width: 180px;
@@ -229,7 +229,7 @@ hr {
 }
 
 
-.counter {
+/* .counter {
     width: 150px;
     margin: auto;
     display: flex;
@@ -255,8 +255,7 @@ hr {
     cursor: pointer;
     color: #373b66;
     user-select: none;
-}
-
+} */
 
 
 

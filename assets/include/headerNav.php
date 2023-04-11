@@ -18,10 +18,12 @@
 
                         </div>
 
-                        <div class="modal-body">
+                        <div class="modal-body" id="modal_panier">
+
                             <ul id="panier">
 
                             </ul>
+
                             <p id="total">Total = </p>
 
                             <form action="" method="post">
