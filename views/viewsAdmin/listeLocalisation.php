@@ -1,5 +1,9 @@
 <div class="main_content">
 
+    <div class="header">Bienvenue <?= $_SESSION["prenom"] ?>!
+        <a href="/Admin/connexion.php?deconnexion=true">Déconnexion</a>
+    </div>
+
     <!-- <a href="/Admin/galeriePrivatisation.php " class="btn btn-success m-5">Revenir a l'ajout de photo</a> -->
 
     <!-- faire un tableau pour afficher les infos de la BDD et enregistrer a la main les premieres info dans la BDD -->
@@ -20,8 +24,8 @@
                 foreach ($localisations as $localisation) { ?>
                     <tr>
                         <td><?= $localisation->jour_semaine ?></td>
-                        <td><?= $localisation->heure_debut ?></td>
-                        <td><?= $localisation->heure_fin ?></td>
+                        <td><?= $localisation->heureDebut() ?></td>
+                        <td><?= $localisation->heureFin() ?></td>
                         <td><?= $localisation->lieu ?></td>
                         <td><?= $localisation->x ?></td>
                         <td><?= $localisation->y ?></td>

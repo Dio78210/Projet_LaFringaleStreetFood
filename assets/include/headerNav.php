@@ -39,7 +39,7 @@
                                 <label for="tel">Téléphone : </label>
                                 <input type="tel" name="tel" id="tel" class="form-control">
 
-                                <input type="submit" value="commander" class="btn mt-4">
+                                <input type="submit" value="commander" class="btn mt-4" id="btnPanier">
                             </form>
 
                         </div>

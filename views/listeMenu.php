@@ -335,7 +335,7 @@
         }
 
 
-        function ajoutPanier(menuAcheter, prix){
+        function ajoutPanier(menuAcheter, menuPrix){
 
             
 
@@ -345,13 +345,13 @@
 
             let titrePanier = document.createElement("p");
             titrePanier.innerText = menuAcheter.nom_menu;
-            ul.appendChild(titrePanier);
+            li.appendChild(titrePanier);
 
 
             if(menuAcheter.image_menu){
                 let img = document.createElement("img");
-                img.style.width = "40px";
-                img.style.height = "40px";
+                img.style.width = "60px";
+                img.style.height = "60px";
                 // console.log(menuAcheter);
                 img.src = "/../assets/image/imgMenu/" + menuAcheter.image_menu;
                 li.appendChild(img);
@@ -360,18 +360,34 @@
             
 
             let prixPanier = document.createElement("p");
-            prixPanier.textContent = prix + " €";
+            prixPanier.textContent = menuPrix + " €";
             li.appendChild(prixPanier);
             
+            
+              // Créer un bouton de suppression
+            let btnSupprimer = document.createElement("a");
+            btnSupprimer.innerHTML = '<i class="bi bi-trash3-fill"></i>';
+            li.appendChild(btnSupprimer);
 
-        
+            // Supprimer l'élément du panier et actualiser le prix total
+            btnSupprimer.addEventListener("click", function() {
+                let index = panier.indexOf(menuAcheter);
+                panier.splice(index, 1);
+                console.log(prix);
+                prix.splice(index, 1);
+                localStorage.panier = JSON.stringify(panier);
+                localStorage.prix = JSON.stringify(prix);
+                ul.removeChild(li);
+                prixTotal -= menuPrix;
+                total.innerText = "TOTAL : " + prixTotal + " €";
+            });
 
             console.log(prix);
 
 
             // console.log(menuAcheter);
 
-            prixTotal += prix;
+            prixTotal += menuPrix;
             total.innerText = "TOTAL : " + prixTotal + " €";
         }
 

@@ -2,12 +2,14 @@
 
     session_start();
 
+
     define("TITLE","Admin");
     define("CSS","ConnexionAdmin");
 
     require_once(__DIR__."/../controllers/adminController.php");
 
     $adminController = new AdminController;
+    $adminController->verifyLogout();
 
     
     // $adminController->signUp();

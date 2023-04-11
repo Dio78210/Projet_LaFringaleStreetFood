@@ -176,18 +176,35 @@ hr {
     text-align: center;
 }
 
+#panier li{
+    text-align: center;
+    margin: 10px;
+}
 
+#panier li a .bi{
+    color: #d71a09;
+}
 
-/* .modal-body {
+#panier li a:hover{
+    cursor: pointer;
+}
+
+#btnPanier{
+    padding: 0 5px;
+}
+
+#panier {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-} */
+}
+
+
 
 .modal-body img {
     width: 180px;
     height: 180px;
-    margin: 20px;
+    margin-bottom: 10px;
 }
 
 .modal-body ul li {

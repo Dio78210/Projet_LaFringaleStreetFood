@@ -50,7 +50,7 @@
                 <?php
                 foreach($localisations as $localisation){ ?>
                 var marker = L.marker([<?= $localisation->x ?>, <?= $localisation->y ?>]).addTo(map);
-                marker.bindPopup("<strong><?= $localisation->lieu ."</strong><br><strong>".$localisation->jour_semaine ."</strong><br>".$localisation->heure_debut ."-". $localisation->heure_fin ?>");
+                marker.bindPopup("<strong><?= $localisation->lieu ."</strong><br><strong>".$localisation->jour_semaine ."</strong><br>".$localisation->heureDebut() ."-". $localisation->heureFin() ?>");
 
                 <?php 
                 }
@@ -64,7 +64,7 @@
                 <?php
                 foreach($localisations as $localisation){ ?>
                     <div class="jourSemaine mt-4" id="Lundi"><?= $localisation->jour_semaine?></div>
-                    <div class="horaire"><?= $localisation->heure_debut ."-". $localisation->heure_fin?></div>
+                    <div class="horaire"><?= $localisation->heureDebut() ."-". $localisation->heureFin()?></div>
                     <a href="https://www.google.com/maps/search/?api=1&query=<?= $localisation->x ?>,<?= $localisation->y ?>"><i class="bi bi-geo-alt-fill"></i><?= $localisation->lieu?></a>
                     <?php 
                 }

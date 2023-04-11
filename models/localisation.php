@@ -12,6 +12,16 @@ class Localisation{
     public float $x;
     public float $y;
 
+    public function heureDebut():string{
+        $dateTime = new DateTime($this->heure_debut);
+        return $dateTime->format("H:i");
+    }
+
+    public function heureFin():string{
+        $dateTime = new DateTime($this->heure_fin);
+        return $dateTime->format("H:i");
+    }
+
     /**
      * Fonction create qui va enregistrer les données en BDD
      *
@@ -38,7 +48,6 @@ class Localisation{
         $statement->bindParam(":x", $x);
         $statement->bindParam(":y", $y);
 
-    
         $statement->execute();
 
     }

@@ -1,5 +1,9 @@
 <div class="main_content">
 
+    <div class="header">Bienvenue <?= $_SESSION["prenom"] ?>!
+        <a href="/Admin/connexion.php?deconnexion=true">Déconnexion</a>
+    </div>
+
     <div class="container">
         <h1 class="m-4">Ma liste des Menus</h1>
 

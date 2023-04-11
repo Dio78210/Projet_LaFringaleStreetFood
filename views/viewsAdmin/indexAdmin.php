@@ -1,5 +1,7 @@
 <div class="main_content">
-    <div class="header">Bienvenue <?= $_SESSION["prenom"] ?></div>
+    <div class="header">Bienvenue <?= $_SESSION["prenom"] ?>!
+        <a href="/Admin/connexion.php?deconnexion=true">Déconnexion</a>
+    </div>
     <div class="info">
 
     <?php

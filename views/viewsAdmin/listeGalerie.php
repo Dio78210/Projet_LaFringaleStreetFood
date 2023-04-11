@@ -1,4 +1,9 @@
 <div class="main_content">
+
+    <div class="header">Bienvenue <?= $_SESSION["prenom"] ?>!
+        <a href="/Admin/connexion.php?deconnexion=true">Déconnexion</a>
+    </div>
+
     <h1>Choisir une photo a supprimer</h1>
     <a href="/Admin/galeriePrivatisation.php " class="btn btn-success m-5">Revenir a l'ajout de photo</a>
 

@@ -81,7 +81,13 @@ class AdminController{
     }
 
 
-    
+    public function verifyLogout():void {
+        if (isset($_GET["deconnexion"])) {
+            session_unset();
+            session_destroy();
+            header("Location: /Admin/connexion.php");
+        }
+    }
 
 
 
