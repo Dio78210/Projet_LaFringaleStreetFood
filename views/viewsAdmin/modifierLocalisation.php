@@ -33,7 +33,7 @@
             <label for="heure_fin">heure de fin</label>
             <input type="time" name="heure_fin" id="heure_fin" class="form-control" value="<?= $localisation->heure_fin ?>">
 
-            <label for="lieu">Lieu</label>
+            <label for="lieu">Lieu (Si le camion est fermé alors juste écrire "Fermé")</label>
             <input type="text" name="lieu" id="lieu" class="form-control" value="<?= $localisation->lieu ?>">
 
             <label for="latitude">Latitude (x)</label>

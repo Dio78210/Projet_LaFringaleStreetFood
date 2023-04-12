@@ -25,8 +25,10 @@
                                 <p class="card-text">Menu avec Frite : <?= $menu->prix_frite ?>€</p>
                                 <p class="card-text">Menu Seul : <?= $menu->prix_seul ?>€</p>
 
-                                <div class="btnModal">
 
+                            </div>
+                            <div class="card-footer">
+                                <div class="btnModal">
                                     <button type="button" class="btnmodal btn-primary" data-bs-toggle="modal" data-bs-target="#Modal<?= $menu->id_menu ?>">
                                         Commander
                                     </button>
@@ -97,8 +99,9 @@
                                 <p class="card-text">Menu Seul: <?= $menu->prix_seul ?>€</p>
 
 
+                            </div>
+                            <div class="card-footer">
                                 <div class="btnModal">
-
                                     <button type="button" class="btnmodal btn-primary" data-bs-toggle="modal" data-bs-target="#Modal<?= $menu->id_menu ?>">
                                         Commander
                                     </button>
@@ -168,7 +171,8 @@
                                 <p class="card-text">Menu avec Frite: <?= $menu->prix_frite ?>€</p>
                                 <p class="card-text">Menu Seul: <?= $menu->prix_seul ?>€</p>
 
-
+                            </div>
+                            <div class="card-footer">
                                 <div class="btnModal">
                                     <button type="button" class="btnmodal btn-primary" data-bs-toggle="modal" data-bs-target="#Modal<?= $menu->id_menu ?>">
                                         Commander
@@ -231,17 +235,15 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><?= $menu->description_menu ?> +<?= $menu->prix_seul ?>€
                                 <div class="btnModal m-3">
-                                    <button type="button" class="btnmodal btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal8">
+                                    <button type="button" class="btnmodal btn-primary" data-bs-toggle="modal" data-bs-target="#Modal<?= $menu->id_menu ?>">
                                         Commander
                                     </button>
                                 </div>
                             </li>
-
                         </ul>
-
                     </div>
 
-                    <div class="modal fade" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModalLabel8" aria-hidden="true">
+                    <div class="modal fade" id="Modal<?= $menu->id_menu ?>" tabindex="-1" aria-labelledby="exampleModalLabel8" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -268,7 +270,6 @@
 </section>
 
 <script>
-
     const videPanier = document.getElementById("videPanier");
     const ul = document.querySelector("#panier");
     var prixTotal = 0;
@@ -277,7 +278,7 @@
     var listeMenus = <?= json_encode($menus);  ?>;
 
     //je recup le Panier dans le localStorage s'il existe deja soit je recup un panier vide
-    if (typeof (localStorage.panier) != "undefined") {
+    if (typeof(localStorage.panier) != "undefined") {
 
         // console.log(localStorage.panier);
         // empty();
@@ -288,120 +289,119 @@
         for (let i = 0; i < panier.length; i++) {
             ajoutPanier(panier[i], prix[i]);
         }
-    }
-    else {
+    } else {
         var panier = [];
         var prix = [];
     }
 
-        for (let i = 0; i < listeMenus.length; i++) {
+    for (let i = 0; i < listeMenus.length; i++) {
 
-            const btnAjoutPanier = document.getElementById("btnAjoutPanier" + listeMenus[i].id_menu);
-            const btnAjoutPanier2 = document.getElementById("btnAjoutPanier2" + listeMenus[i].id_menu);
-            const btnAjoutPanier3 = document.getElementById("btnAjoutPanier3" + listeMenus[i].id_menu);
+        const btnAjoutPanier = document.getElementById("btnAjoutPanier" + listeMenus[i].id_menu);
+        const btnAjoutPanier2 = document.getElementById("btnAjoutPanier2" + listeMenus[i].id_menu);
+        const btnAjoutPanier3 = document.getElementById("btnAjoutPanier3" + listeMenus[i].id_menu);
 
-            if(btnAjoutPanier){
-                btnAjoutPanier.addEventListener("click", function (){
+        if (btnAjoutPanier) {
+            btnAjoutPanier.addEventListener("click", function() {
                 panier.push(listeMenus[i]);
                 prix.push(listeMenus[i].prix_boisson);
                 localStorage.panier = JSON.stringify(panier);
                 localStorage.prix = JSON.stringify(prix);
                 ajoutPanier(listeMenus[i], listeMenus[i].prix_boisson);
-                })
-            }
-            
-            if(btnAjoutPanier2){
-                btnAjoutPanier2.addEventListener("click", function (){
+            })
+        }
+
+        if (btnAjoutPanier2) {
+            btnAjoutPanier2.addEventListener("click", function() {
                 panier.push(listeMenus[i]);
                 prix.push(listeMenus[i].prix_frite);
                 localStorage.panier = JSON.stringify(panier);
                 localStorage.prix = JSON.stringify(prix);
                 ajoutPanier(listeMenus[i], listeMenus[i].prix_frite);
-                })
-            }
+            })
+        }
 
-            if(btnAjoutPanier3){
-                btnAjoutPanier3.addEventListener("click", function (){
+        if (btnAjoutPanier3) {
+            btnAjoutPanier3.addEventListener("click", function() {
                 panier.push(listeMenus[i]);
                 prix.push(listeMenus[i].prix_seul);
                 localStorage.panier = JSON.stringify(panier);
                 localStorage.prix = JSON.stringify(prix);
                 ajoutPanier(listeMenus[i], listeMenus[i].prix_seul);
-                })
-            }
-
-            // console.log(listeMenus);
-
+            })
         }
 
+        // console.log(listeMenus);
 
-        function ajoutPanier(menuAcheter, menuPrix){
-
-            
-
-            let li = document.createElement("li");
-            ul.appendChild(li);
-            
-
-            let titrePanier = document.createElement("p");
-            titrePanier.innerText = menuAcheter.nom_menu;
-            li.appendChild(titrePanier);
+    }
 
 
-            if(menuAcheter.image_menu){
-                let img = document.createElement("img");
-                img.style.width = "60px";
-                img.style.height = "60px";
-                // console.log(menuAcheter);
-                img.src = "/../assets/image/imgMenu/" + menuAcheter.image_menu;
-                li.appendChild(img);
-            }
-
-            
-
-            let prixPanier = document.createElement("p");
-            prixPanier.textContent = menuPrix + " €";
-            li.appendChild(prixPanier);
-            
-            
-              // Créer un bouton de suppression
-            let btnSupprimer = document.createElement("a");
-            btnSupprimer.innerHTML = '<i class="bi bi-trash3-fill"></i>';
-            li.appendChild(btnSupprimer);
-
-            // Supprimer l'élément du panier et actualiser le prix total
-            btnSupprimer.addEventListener("click", function() {
-                let index = panier.indexOf(menuAcheter);
-                panier.splice(index, 1);
-                console.log(prix);
-                prix.splice(index, 1);
-                localStorage.panier = JSON.stringify(panier);
-                localStorage.prix = JSON.stringify(prix);
-                ul.removeChild(li);
-                prixTotal -= menuPrix;
-                total.innerText = "TOTAL : " + prixTotal + " €";
-            });
-
-            console.log(prix);
+    function ajoutPanier(menuAcheter, menuPrix) {
 
 
+
+        let li = document.createElement("li");
+        ul.appendChild(li);
+
+
+        let titrePanier = document.createElement("p");
+        titrePanier.innerText = menuAcheter.nom_menu;
+        li.appendChild(titrePanier);
+
+
+        if (menuAcheter.image_menu) {
+            let img = document.createElement("img");
+            img.style.width = "60px";
+            img.style.height = "60px";
             // console.log(menuAcheter);
-
-            prixTotal += menuPrix;
-            total.innerText = "TOTAL : " + prixTotal + " €";
+            img.src = "/../assets/image/imgMenu/" + menuAcheter.image_menu;
+            li.appendChild(img);
         }
 
-        function empty() {
-            document.getElementById("panier").innerText = "";
-            panier = [];
-            prix = [];
-            total.innerText = "" ;
+
+
+        let prixPanier = document.createElement("p");
+        prixPanier.textContent = menuPrix + " €";
+        li.appendChild(prixPanier);
+
+
+        // Créer un bouton de suppression
+        let btnSupprimer = document.createElement("a");
+        btnSupprimer.innerHTML = '<i class="bi bi-trash3-fill"></i>';
+        li.appendChild(btnSupprimer);
+
+        // Supprimer l'élément du panier et actualiser le prix total
+        btnSupprimer.addEventListener("click", function() {
+            let index = panier.indexOf(menuAcheter);
+            panier.splice(index, 1);
+            console.log(prix);
+            prix.splice(index, 1);
             localStorage.panier = JSON.stringify(panier);
             localStorage.prix = JSON.stringify(prix);
-        }
-
-        videPanier.addEventListener("click", () => {
-        empty();
+            ul.removeChild(li);
+            prixTotal -= menuPrix;
+            total.innerText = "TOTAL : " + prixTotal + " €";
         });
 
+        console.log(prix);
+
+
+        // console.log(menuAcheter);
+
+        prixTotal += menuPrix;
+        total.innerText = "TOTAL : " + prixTotal + " €";
+    }
+
+    function empty() {
+        document.getElementById("panier").innerText = "";
+        panier = [];
+        prix = [];
+        total.innerText = "";
+        localStorage.panier = JSON.stringify(panier);
+        localStorage.prix = JSON.stringify(prix);
+        prixTotal = 0;
+    }
+
+    videPanier.addEventListener("click", () => {
+        empty();
+    });
 </script>

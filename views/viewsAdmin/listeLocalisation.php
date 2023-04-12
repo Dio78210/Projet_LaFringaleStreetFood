@@ -20,6 +20,7 @@
                     <th scope="col">Coordonée Longitude (y)</th>
             </thead>
             <tbody>
+            
                 <?php
                 foreach ($localisations as $localisation) { ?>
                     <tr>

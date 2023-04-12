@@ -8,6 +8,7 @@ class formContactController
 
     public function createContact(): array
     {
+        // var_dump($_POST);
 
         $messages = [];
 
@@ -19,7 +20,7 @@ class formContactController
             if (!isset($_POST["nom"]) || strlen($_POST["nom"]) == 0) {
                 $messages[] = [
                     "success" => false,
-                    "text" => "Votre nom doit avoir au moin 1 caractère"
+                    "text" => "Votre nom doit avoir au moins 1 caractère"
                 ];
             }
 
@@ -43,7 +44,7 @@ class formContactController
             $information = $_POST["information"];
             $information = htmlspecialchars($information, ENT_QUOTES);
 
-            if (isset($_POST["form"]) == "long") {
+            if ($_POST["form"] == "long") {
 
                 //verif du nom de l'entreprise
                 if (!isset($_POST["nom_entreprise"])) {
