@@ -165,12 +165,12 @@ hr {
 }
 
 .card{
-    border: 1.5px solid black;
-    box-shadow: -5px -5px 5px #0000007d;
+    border: 2px solid black;
+    /* box-shadow: -5px -5px 5px #0000007d; */
 }
 
 .list-group {
-    border: 1.5px solid black;
+    border: 1.7px solid black;
 }
 
 .menu1 {
