@@ -41,7 +41,7 @@ class aProposController{
                 if (!in_array($filetype, $extensions)) {
                     $messages[] = [
                         "success" => false,
-                        "text" => "Format d'image incorrect. Type de fichier autorisés : PNG, JPG, WEBP"
+                        "text" => "Format d'image incorrect. Types de fichiers autorisés : PNG, JPG, WEBP"
                     ];
                 }
 
@@ -66,7 +66,7 @@ class aProposController{
             if (count($messages) == 0) {
                 $messages[] = [
                     "success" => true,
-                    "text" => "Mon a propos à bien été crée."
+                    "text" => "Mon a propos a bien été créé."
                 ];
                 
                 A_propos::create($photo, $_POST["texte"], $_POST["titre"]);
@@ -116,7 +116,7 @@ class aProposController{
                 if (!in_array($filetype, $extensions)) {
                     $messages[] = [
                         "success" => false,
-                        "text" => "Format d'image incorrect. Type de fichier autorisés : PNG, JPG, WEBP"
+                        "text" => "Format d'image incorrect. Types de fichiers autorisés : PNG, JPG, WEBP"
                     ];
                 }
 
@@ -141,7 +141,7 @@ class aProposController{
             if (count($messages) == 0) {
                 $messages[] = [
                     "success" => true,
-                    "text" => "A propos a bien été crée."
+                    "text" => "A propos a bien été créé."
                 ];
 
                 
@@ -158,7 +158,7 @@ class aProposController{
                 die;
         }
         if (!is_numeric($_GET["id"])) {
-                echo "L'ID renseigné doit être numerique";
+                echo "L'ID renseigné doit être numérique";
                 die;
         }
 

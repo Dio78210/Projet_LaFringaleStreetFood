@@ -26,7 +26,7 @@ class PrivatisationController{
                 if (!in_array($filetype, $extensions)) {
                     $messages[] = [
                         "success" => false,
-                        "text" => "Format d'image incorrect. Type de fichier autorisés : PNG, JPG, WEBP"
+                        "text" => "Format d'image incorrect. Types de fichiers autorisés : PNG, JPG, WEBP"
                     ];
                 }
 
@@ -57,7 +57,7 @@ class PrivatisationController{
             if (count($messages) == 0) {
                 $messages[] = [
                     "success" => true,
-                    "text" => "La photo a bien été crée."
+                    "text" => "La photo a bien été créé."
                 ];
                 
                 GalerieMultimedia::create($photo, $_POST["textAlternatif"]);
@@ -79,7 +79,7 @@ class PrivatisationController{
                 die;
         }
         if (!is_numeric($_GET["id"])) {
-                echo "L'ID renseigné doit être numerique";
+                echo "L'ID renseigné doit être numérique";
                 die;
         }
 

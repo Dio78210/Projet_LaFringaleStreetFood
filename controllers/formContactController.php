@@ -28,7 +28,7 @@ class formContactController
             if (!isset($_POST["prenom"]) || strlen($_POST["prenom"]) == 0) {
                 $messages[] = [
                     "success" => false,
-                    "text" => "Votre prénom doit avoir au moin 1 caractère"
+                    "text" => "Votre prénom doit avoir au moins 1 caractère"
                 ];
             }
 
@@ -93,7 +93,7 @@ class formContactController
                 if (!isset($_POST['horaire_evenement']) || !preg_match("(^(?:2[0-3]|[01][0-9]):[0-5][0-9]$)", $_POST["horaire_evenement"])) {
                     $messages[] = [
                         "success" => false,
-                        "text" => "L'horraire choisie est invalide"
+                        "text" => "L'horaire choisi est invalide"
                     ];
                 }
 
@@ -101,7 +101,7 @@ class formContactController
                 if (!isset($_POST["nombre_de_convive"]) || !is_numeric($_POST["nombre_de_convive"])) {
                     $messages[] = [
                         "success" => false,
-                        "text" => "Le nombre de convive doit etre numerique."
+                        "text" => "Le nombre de convives doit être numérique."
                     ];
                 }
 

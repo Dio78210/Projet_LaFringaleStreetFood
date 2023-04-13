@@ -41,7 +41,7 @@ class MenuController{
                 if (!in_array($filetype, $extensions)) {
                     $messages[] = [
                         "success" => false,
-                        "text" => "Format d'image incorrect. Type de fichier autorisés : PNG, JPG, WEBP"
+                        "text" => "Format d'image incorrect. Types de fichiers autorisés : PNG, JPG, WEBP"
                     ];
                 }
 
@@ -94,7 +94,7 @@ class MenuController{
             if (count($messages) == 0) {
                 $messages[] = [
                     "success" => true,
-                    "text" => "Le menu a bien été crée."
+                    "text" => "Le menu a bien été créé."
                 ];
                 
                 Menu::create($_POST["nom_menu"],$_POST["type_menu"], $description_menu, $image_menu, $_POST["prix_seul"], $_POST["prix_frite"], $_POST["prix_boisson"]);
@@ -108,7 +108,7 @@ class MenuController{
             echo "veuillez indiquer l'id d'un menu à afficher";
             die;
         } elseif (!is_numeric($_GET["id"])) {
-            echo "l'id du menu à afficher doit etre un nombre";
+            echo "l'id du menu à afficher doit être un nombre";
             die;
         } else {
             $id_menu = $_GET["id"];
@@ -139,7 +139,7 @@ class MenuController{
             if (!isset($_POST["nom_menu"]) || strlen($_POST["nom_menu"]) == 0) {
                 $messages[] = [
                     "success" => false,
-                    "text" => "Le nom du menu doit avoir au moin 1 caractère"
+                    "text" => "Le nom du menu doit avoir au moins 1 caractère"
                 ];
             }
 
@@ -163,7 +163,7 @@ class MenuController{
                 if (!in_array($filetype, $extensions)) {
                     $messages[] = [
                         "success" => false,
-                        "text" => "Format d'image incorrect. Type de fichier autorisés : PNG, JPG, WEBP"
+                        "text" => "Format d'image incorrect. Types de fichiers autorisés : PNG, JPG, WEBP"
                     ];
                 }
 
@@ -216,7 +216,7 @@ class MenuController{
             if (count($messages) == 0) {
                 $messages[] = [
                     "success" => true,
-                    "text" => "Le menu a bien été mis a jour."
+                    "text" => "Le menu a bien été mis à jour."
                 ];
                 
                 $id_menu = $_GET["id"];

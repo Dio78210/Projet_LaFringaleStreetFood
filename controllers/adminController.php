@@ -39,13 +39,13 @@ class AdminController{
                 elseif(!password_verify($_POST["password"], $admin->mot_de_passe)){
                     $messages [] = [
                         "success" => false,
-                        "text" => "mot de passe incorrect"
+                        "text" => "Mot de passe incorrect"
                     ];
                 }
                 else{
                     $messages [] = [
                         "success" => true,
-                        "text" => "Vous etes connecté."
+                        "text" => "Vous êtes connecté."
                     ];
 
 

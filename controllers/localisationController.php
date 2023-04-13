@@ -16,7 +16,7 @@ class LocalisationController{
             echo "veuillez indiquer l'id d'une localisation à afficher";
             die;
         } elseif (!is_numeric($_GET["id"])) {
-            echo "l'id à afficher doit etre un nombre";
+            echo "l'id à afficher doit être un nombre";
             die;
         } else {
             $id_localisation = $_GET["id"];
@@ -56,7 +56,7 @@ class LocalisationController{
             if (!isset($_POST["jour"]) || strlen($_POST["jour"]) == 0) {
                 $messages[] = [
                     "success" => false,
-                    "text" => "Le jour doit avoir au moin 1 caractère"
+                    "text" => "Le jour doit avoir au moins 1 caractère"
                 ];
             }
 
@@ -79,7 +79,7 @@ class LocalisationController{
             if (!isset($_POST["lieu"]) || strlen($_POST["lieu"]) == 0) {
                 $messages[] = [
                     "success" => false,
-                    "text" => "Le lieu doit avoir au moin 1 caractère"
+                    "text" => "Le lieu doit avoir au moins 1 caractère"
                 ];
             }
 
@@ -100,7 +100,7 @@ class LocalisationController{
             if (count($messages) == 0) {
                 $messages[] = [
                     "success" => true,
-                    "text" => "L'emplacement à bien été mis a jour."
+                    "text" => "L'emplacement a bien été mis à jour."
                 ];
                 
                 $id_localisation = $_GET["id"];

@@ -23,7 +23,7 @@
         <label for="nom_menu">Nom du Menu</label>
         <input type="text" name="nom_menu" id="nom_menu" class="form-control">
 
-        <label for="description_menu">description du Menu</label>
+        <label for="description_menu">Description du Menu</label>
         <textarea name="description_menu" id="description_menu" class="form-control"></textarea>
 
         <label for="image_menu">Image du Menu</label>
@@ -32,7 +32,7 @@
         <label for="prix_seul">Prix Seul</label>
         <input type="number" name="prix_seul" id="prix_seul" step="0.01" class="form-control">
 
-        <label for="prix_frite">Prix Avec Frite</label>
+        <label for="prix_frite">Prix Avec Frites</label>
         <input type="number" name="prix_frite" id="prix_frite" step="0.01" class="form-control">
 
         <label for="prix_boisson">Prix Avec Boisson</label>
